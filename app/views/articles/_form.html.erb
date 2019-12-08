@@ -1,5 +1,5 @@
 <% if @article.errors.any? %>
- <h2>git push -u origin masterThe following errors privented the article from getting created</h2>
+ <h2>The following errors privented the article from getting created</h2>
   <ul>
     <% @article.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
