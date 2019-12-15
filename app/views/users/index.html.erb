@@ -1,0 +1,43 @@
+<h1 aligin="center">Users</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Username
+      </th>
+      <th>
+        email
+      </th>
+      <th>
+        Created
+      </th>
+      <th>
+        Articles
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+  <tbody>
+    <tr scope="row">
+      <td><%= link_to user.username, user_path(user) %></td>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= time_ago_in_words(user.created_at) %>
+      </td>
+      <td>
+        <%= pluralize(user.articles.count, "article") %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_user_path(user), class: "btn btn-sm btn-primary" %>
+        <%= link_to 'Show', user_path(user), class: "btn btn-sm btn-info" %>
+        <%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>

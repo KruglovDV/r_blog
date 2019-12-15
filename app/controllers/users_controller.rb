@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+  
   def new
     @user = User.new
   end
@@ -29,6 +33,13 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "User #{@user.username} was successfully deleted"
+    redirect_to action: 'index'
   end
 
   private
