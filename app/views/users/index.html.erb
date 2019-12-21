@@ -1,4 +1,7 @@
 <h1 aligin="center">Users</h1>
+<div style="margin: auto; width: fit-content">
+  <%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -41,3 +44,6 @@
   </tbody>
   <% end %>
 </table>
+<div style="margin: auto; width: fit-content">
+  <%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
