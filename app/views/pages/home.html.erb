@@ -1,4 +1,4 @@
 <div class="center jumbotron" style="margin-top: 16px">
   <h1>R Blog</h1>
-  <%= link_to "Sign up", "#", class: "btn btn-primary btn-lg" %>
+  <%= link_to("Sign up", signup_path, class: "btn btn-primary btn-lg") unless session[:user_id] %>
 </div>
