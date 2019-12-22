@@ -2,7 +2,7 @@
 <div class="well col-md-8 col-md-offset-2">
   <%= simple_format(@article.description) %>
 </div>
-<% if logged_in? && current_user == @article.user %>
+<% if (logged_in? && current_user == @article.user) or current_user.admin? %>
 <%= link_to 'edit', edit_article_path(@article), class: "btn btn-sm btn-primary" %>
 <%= link_to 'delete', article_path(@article), method: "delete", class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" } %>
 <% end %>

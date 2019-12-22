@@ -23,8 +23,9 @@
       <% end %>
     </ul>
     <% if logged_in? %>
-    <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
+    <%= "Admin" if current_user.admin? %>
     <%= link_to current_user.username, user_path(current_user), class: "nav-link" %>
+    <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
     <% else %>
     <%= link_to "Log in", login_path, class: "nav-link" %>
     <%= link_to "Sign up", signup_path, class: "nav-link" %>
