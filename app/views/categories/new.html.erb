@@ -1,0 +1,14 @@
+<h1 align="center">Create new category</h1>
+<%= render("shared/errors", obj: @category) %>
+<%= form_for @category do |f| %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control", placeholder: "Category name", autofocus: true %>
+</div>
+<div>
+  <div>
+    <%= f.submit(@category.new_record? ? "Create" : "Update", class: "btn btn-primary") %>
+  </div>
+</div>
+<% end %>
+
